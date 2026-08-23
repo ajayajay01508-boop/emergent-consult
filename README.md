@@ -1,6 +1,6 @@
 🚀 AI Workflow Manager (Emergent Platform)
 Live Demo
-🔗 workflow-manager-287.emergent.host
+🔗https://workflow-manager-287.emergent.host
 
 📌 Overview
 The AI Workflow Manager is a generative AI-powered application built on the Emergent platform. It automates multi-step workflows with conditional branching, approvals, and external API integrations — enabling rapid orchestration of complex processes without extensive coding.
