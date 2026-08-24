@@ -1,59 +1,43 @@
-🚀 AI Workflow Manager (Emergent Platform)
-Live Demo
-🔗https://workflow-manager-287.emergent.host
+# Consult — Decision Governance & Workflow Platform
 
-📌 Overview
-The AI Workflow Manager is a generative AI-powered application built on the Emergent platform. It automates multi-step workflows with conditional branching, approvals, and external API integrations — enabling rapid orchestration of complex processes without extensive coding.
+> Govern high‑impact decisions with conditional approval gates, policy integrity, and a tamper‑evident audit trail.
 
-✨ Features
-🔄 Workflow Automation — design and execute multi-step processes.
+---
 
-✅ Conditional Logic — approvals, branching, and decision gates.
+## 🌐 Live Demo
+[workflow-manager-287.emergent.host](https://workflow-manager-287.emergent.host)
 
-🌐 API Integration — connect external services seamlessly.
+---
 
-📊 Real-Time Monitoring — track workflow execution and outcomes.
+## 📌 Overview
+**Consult** is an enterprise workflow governance platform that centralizes decision‑making into a verifiable system of record.  
+It ensures that every high‑impact decision passes through structured approval gates, is evaluated under the correct policy snapshot, and is permanently recorded in a cryptographically verifiable audit trail.
 
-⚡ Low-Code Deployment — built and published directly via Emergent.
+---
 
-🛠️ Tech Stack
-Emergent Platform (workflow orchestration + hosting)
+## ✨ Key Features
+- **Conditional Approval Gates** → Sequential workflows with dynamic routing based on risk, amount, or hierarchy.  
+- **Policy Snapshotting** → Captures the active policy at submission to preserve integrity.  
+- **Tamper‑Evident Audit Trail** → Append‑only, SHA‑256 hash‑chained logs for verifiable history.  
+- **Decision Timeline** → Unified view of status, owners, approvals, rejections, and verification.  
+- **Role‑Based Access Control (RBAC)** → Requesters, reviewers, auditors, and admins with distinct privileges.  
 
-Generative AI Models (automation logic + decision-making)
+---
 
-Cloud Deployment (live at emergent.host)
+## 🛡️ Security & Governance
+- **Cryptographic Integrity** → Every workflow event is hash‑linked.  
+- **Immutable Records** → Append‑only design prevents retroactive changes.  
+- **Policy Integrity** → Decisions evaluated under frozen policy context.  
+- **Auditability** → Auditors can independently verify the complete lifecycle.  
 
-GitHub (version control + collaboration)
+---
 
-📂 Project Structure
-Code
-├── workflows/         # Workflow definitions
-├── api/               # External API integrations
-├── ui/                # User interface components
-├── docs/              # Documentation and diagrams
-└── README.md          # Project overview
-🚀 Getting Started
-Clone the repository:
-
-bash
-git clone https://github.com/yourusername/workflow-manager.git
-Open in Emergent platform.
-
-Deploy workflows and publish.
-
-Access live app at:
-workflow-manager-287.emergent.host
-
-📄 Resume/Portfolio Impact
-This project demonstrates:
-
-Generative AI application development
-
-Workflow automation and orchestration
-
-Cloud deployment and live hosting
-
-Problem-solving with low-code/no-code platforms
+## 🎯 Use Cases
+- Financial approvals & budget governance  
+- Procurement & vendor onboarding  
+- Risk & compliance reviews  
+- Security exceptions & access requests  
+- Enterprise operational changes  
 
 📜 License
 This project is licensed under the MIT License — feel free to use and adapt.
