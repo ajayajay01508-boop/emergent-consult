@@ -1,43 +1,48 @@
-# Consult — Decision Governance & Workflow Platform
+# Consult — Decision Governance Platform
 
-> Govern high‑impact decisions with conditional approval gates, policy integrity, and a tamper‑evident audit trail.
+[![Quality Gates](https://github.com/ajayajay01508-boop/emergent-consult/actions/workflows/quality.yml/badge.svg)](https://github.com/ajayajay01508-boop/emergent-consult/actions/workflows/quality.yml)
 
----
+An interactive, browser-based decision-operations workspace for routing high-impact requests through explicit approval gates and preserving a cryptographically verifiable audit history.
 
-## 🌐 Live Demo
-[workflow-manager-287.emergent.host](https://workflow-manager-287.emergent.host)
+**Live:** [workflow-manager-287.emergent.host](https://workflow-manager-287.emergent.host)
 
----
+## What it demonstrates
 
-## 📌 Overview
-**Consult** is an enterprise workflow governance platform that centralizes decision‑making into a verifiable system of record.  
-It ensures that every high‑impact decision passes through structured approval gates, is evaluated under the correct policy snapshot, and is permanently recorded in a cryptographically verifiable audit trail.
+- Conditional, sequential approval gates that cannot be skipped
+- Requester, reviewer, auditor and administrator permission previews
+- Approval and change-request workflows with decision notes
+- Search and status filtering across an operational decision queue
+- SHA-256 hash-linked audit events with in-product integrity verification
+- Responsive, accessible interface with no build step or external runtime dependency
 
----
+## Run locally
 
-## ✨ Key Features
-- **Conditional Approval Gates** → Sequential workflows with dynamic routing based on risk, amount, or hierarchy.  
-- **Policy Snapshotting** → Captures the active policy at submission to preserve integrity.  
-- **Tamper‑Evident Audit Trail** → Append‑only, SHA‑256 hash‑chained logs for verifiable history.  
-- **Decision Timeline** → Unified view of status, owners, approvals, rejections, and verification.  
-- **Role‑Based Access Control (RBAC)** → Requesters, reviewers, auditors, and admins with distinct privileges.  
+Serve the repository from any static web server:
 
----
+```bash
+python -m http.server 8080
+```
 
-## 🛡️ Security & Governance
-- **Cryptographic Integrity** → Every workflow event is hash‑linked.  
-- **Immutable Records** → Append‑only design prevents retroactive changes.  
-- **Policy Integrity** → Decisions evaluated under frozen policy context.  
-- **Auditability** → Auditors can independently verify the complete lifecycle.  
+Open `http://localhost:8080`. The demo uses in-memory sample records and makes no network requests for decision data.
 
----
+## Test
 
-## 🎯 Use Cases
-- Financial approvals & budget governance  
-- Procurement & vendor onboarding  
-- Risk & compliance reviews  
-- Security exceptions & access requests  
-- Enterprise operational changes  
+```bash
+npm test
+```
 
-📜 License
-This project is licensed under the MIT License — feel free to use and adapt.
+The Node test suite verifies role enforcement, sequential gate transitions, rejection behavior and tamper detection. GitHub Actions runs the suite on every push and pull request.
+
+## Architecture
+
+- `index.html` — semantic application shell and request dialog
+- `styles.css` — responsive product interface
+- `app.js` — UI state, filtering and workflow interactions
+- `src/governance.mjs` — reusable decision and audit-chain rules
+- `tests/governance.test.mjs` — deterministic governance tests
+
+This portfolio implementation is a client-side reference architecture. A production deployment would persist requests and audit records in a database, enforce RBAC on the server and store signing keys in managed infrastructure.
+
+## License
+
+MIT

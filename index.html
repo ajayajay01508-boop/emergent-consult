@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consult is a decision-governance platform with conditional approvals, role-based access and a tamper-evident audit trail.">
+  <title>Consult | Decision Governance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span>C</span><strong>consult</strong></a>
+      <nav aria-label="Primary navigation">
+        <button class="nav-item active" data-view="overview"><span>⌂</span>Overview</button>
+        <button class="nav-item" data-view="requests"><span>≡</span>Decisions<b id="open-count">0</b></button>
+        <button class="nav-item" data-view="audit"><span>⌁</span>Audit trail</button>
+      </nav>
+      <div class="role-card">
+        <label for="role">Preview role</label>
+        <select id="role">
+          <option value="requester">Requester</option>
+          <option value="reviewer" selected>Reviewer</option>
+          <option value="auditor">Auditor</option>
+          <option value="admin">Admin</option>
+        </select>
+        <small>Permissions update instantly.</small>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="mobile-menu" aria-label="Open menu">☰</button>
+        <div><span class="status-dot"></span><strong>Governance workspace</strong></div>
+        <button class="button secondary" id="verify-button">Verify audit chain</button>
+        <button class="button primary" id="new-request-button">New request</button>
+      </header>
+
+      <div class="page">
+        <section class="hero">
+          <div>
+            <p class="eyebrow">Decision operations</p>
+            <h1>Move important decisions forward—with proof.</h1>
+            <p>Route requests through the right approval gates, preserve policy context and verify every action in a tamper-evident record.</p>
+          </div>
+          <div class="hero-proof"><span>SHA-256</span><strong>Audit integrity active</strong><small>Every event is linked to the previous record.</small></div>
+        </section>
+
+        <section class="metrics" aria-label="Decision metrics">
+          <article><span>Open decisions</span><strong id="metric-open">0</strong><small>Across active workflows</small></article>
+          <article><span>Awaiting action</span><strong id="metric-waiting">0</strong><small>Assigned to your role</small></article>
+          <article><span>Approval rate</span><strong id="metric-rate">0%</strong><small>For completed decisions</small></article>
+          <article><span>Integrity</span><strong class="good">Verified</strong><small>Hash-linked event history</small></article>
+        </section>
+
+        <section class="workspace-grid">
+          <div class="panel requests-panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">Decision queue</p><h2>Priority requests</h2></div>
+              <div class="filters">
+                <input id="search" type="search" placeholder="Search decisions">
+                <select id="status-filter"><option>All statuses</option><option>In review</option><option>Approved</option><option>Changes requested</option><option>Rejected</option></select>
+              </div>
+            </div>
+            <div class="request-list" id="request-list"></div>
+          </div>
+
+          <aside class="panel detail-panel" id="detail-panel" aria-live="polite"></aside>
+        </section>
+
+        <section class="panel audit-panel" id="audit-section">
+          <div class="panel-heading"><div><p class="eyebrow">System of record</p><h2>Tamper-evident audit trail</h2></div><span class="verified" id="verification-status">● Chain ready</span></div>
+          <div id="audit-list" class="audit-list"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="request-dialog">
+    <form id="request-form" method="dialog">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <p class="eyebrow">New governed decision</p>
+      <h2>Submit a request</h2>
+      <label>Decision title<input name="title" required maxlength="80" placeholder="Approve Q4 analytics vendor"></label>
+      <label>Business area<select name="area"><option>Technology</option><option>Finance</option><option>Operations</option><option>Procurement</option></select></label>
+      <label>Risk level<select name="risk"><option>Medium</option><option>High</option><option>Critical</option><option>Low</option></select></label>
+      <label>Decision context<textarea name="context" required maxlength="240" placeholder="Explain the decision, expected value and constraints."></textarea></label>
+      <button class="button primary full" type="submit">Create governed request</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
